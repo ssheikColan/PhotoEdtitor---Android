@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainActivityContainer"
+    android:layout_width="match_parent"
+    android:background="@color/black"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.binish.photoeditorx.photoeditor.PhotoEditorView
+        android:id="@+id/photoEditorView"
+        android:layout_margin="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.binish.sample.photoeditorx.views.CustomImageButton
+        android:id="@+id/imageButtonRotateLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_rotate_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintVertical_bias="0.15"
+        />
+
+    <com.binish.sample.photoeditorx.views.CustomImageButton
+        android:id="@+id/imageButtonRotateRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_rotate_right"
+        app:layout_constraintStart_toStartOf="@id/imageButtonRotateLeft"
+        app:layout_constraintEnd_toEndOf="@id/imageButtonRotateLeft"
+        app:layout_constraintTop_toBottomOf="@id/imageButtonRotateLeft"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.05"
+        />
+
+    <com.binish.sample.photoeditorx.views.CustomImageButton
+        android:id="@+id/imageButtonStickers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sticker"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.02"
+        app:layout_constraintHorizontal_bias="0.74"
+        />
+
+    <com.binish.sample.photoeditorx.views.CustomImageButton
+        android:id="@+id/imageButtonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/ic_camera_download"
+        app:layout_constraintTop_toTopOf="@id/imageButtonStickers"
+        app:layout_constraintBottom_toBottomOf="@id/imageButtonStickers"
+        app:layout_constraintEnd_toStartOf="@id/imageButtonStickers"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.85"
+        />
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/editLayoutContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layoutDescription="@xml/add_edit_text_scene"
+        >
+        <include
+            android:id="@+id/layoutEdit"
+            layout="@layout/layout_add_edit_text"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+
+    <com.binish.photoeditorx.views.DeleteView
+        android:id="@+id/viewDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="10dp"
+        app:bottomPadding="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
